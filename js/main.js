@@ -527,29 +527,55 @@ function initContactForm() {
   }
 
   if (proceedBtn) {
-    proceedBtn.addEventListener('click', () => {
+    proceedBtn.addEventListener('click', async () => {
       if (!pendingData) return;
       const { userEmail, subject, message } = pendingData;
-      if (confirmModal) confirmModal.classList.remove('active');
 
-      // Construct direct, prefilled Gmail compose URL with user's customized subject and body
-      const customSubject = `[Portfolio Inquiry] ${subject}`;
-      const bodyText = `Hi Rohan,\n\n${message}\n\n----------------------------------------\nSender Contact: ${userEmail}\nSent from Rohan Verma Portfolio`;
+      const originalBtnContent = proceedBtn.innerHTML;
+      proceedBtn.disabled = true;
+      proceedBtn.innerHTML = `
+        <span style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:btnSpin 0.75s linear infinite;margin-right:6px;vertical-align:middle;"></span>
+        <span>Transmitting...</span>
+      `;
 
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rohanvermahja@gmail.com&su=${encodeURIComponent(customSubject)}&body=${encodeURIComponent(bodyText)}`;
+      try {
+        const customSubject = `[Portfolio Inquiry] ${subject}`;
+        const res = await fetch('https://formsubmit.co/ajax/rohanvermahja@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: userEmail.split('@')[0],
+            email: userEmail,
+            _subject: customSubject,
+            _replyto: userEmail,
+            _template: 'table',
+            _captcha: 'false',
+            message: message
+          })
+        });
 
-      // Open direct web Gmail compose in new tab
-      const win = window.open(gmailUrl, '_blank');
-
-      // If popup was blocked or user prefers mailto client fallback
-      if (!win || win.closed || typeof win.closed === 'undefined') {
-        const mailtoUrl = `mailto:rohanvermahja@gmail.com?subject=${encodeURIComponent(customSubject)}&body=${encodeURIComponent(bodyText)}`;
-        window.location.href = mailtoUrl;
+        if (confirmModal) confirmModal.classList.remove('active');
+        showSentToast();
+        form.reset();
+        pendingData = null;
+      } catch (err) {
+        // Fallback for offline/blocked network: open Gmail prefilled compose so message is never lost
+        console.warn('Background mail dispatch fallback to web client:', err);
+        if (confirmModal) confirmModal.classList.remove('active');
+        const customSubject = `[Portfolio Inquiry] ${subject}`;
+        const bodyText = `Hi Rohan,\n\n${message}\n\n----------------------------------------\nSender Contact: ${userEmail}\nSent from Rohan Verma Portfolio`;
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=rohanvermahja@gmail.com&su=${encodeURIComponent(customSubject)}&body=${encodeURIComponent(bodyText)}`;
+        window.open(gmailUrl, '_blank');
+        showSentToast();
+        form.reset();
+        pendingData = null;
+      } finally {
+        proceedBtn.disabled = false;
+        proceedBtn.innerHTML = originalBtnContent;
       }
-
-      showSentToast();
-      form.reset();
-      pendingData = null;
     });
   }
 
