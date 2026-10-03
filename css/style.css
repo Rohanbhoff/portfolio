@@ -2739,9 +2739,9 @@ section {
 /* Mail Sent Toast */
 .mail-sent-toast {
   position: fixed;
-  bottom: 2rem;
+  bottom: 5rem;
   right: 2rem;
-  z-index: 9999;
+  z-index: 99999;
   background: rgba(8, 14, 28, 0.96);
   border: 1.5px solid #00d2ff;
   border-radius: var(--radius-md);
