@@ -1,4 +1,4 @@
-# ⚡ Rohan Verma — Personal Engineering Portfolio
+# ⚡ Rohan Verma — Portfolio
 
 [![Live Site](https://img.shields.io/badge/Live_Portfolio-rohanbhoff.github.io%2Fportfolio-00d2ff?style=for-the-badge&logo=google-chrome&logoColor=white)](https://rohanbhoff.github.io/portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rohan_Verma-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rohan-verma-982879357/)
