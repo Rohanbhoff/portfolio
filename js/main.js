@@ -101,7 +101,7 @@ function initCustomCursor() {
     if (spotlight) {
       spotX += (mouseX - spotX) * 0.08;
       spotY += (mouseY - spotY) * 0.08;
-      spotlight.style.transform = `translate(${spotX}px, ${spotY}px) translate(-50%, -50%)`;
+      spotlight.style.transform = `translate3d(${spotX}px, ${spotY}px, 0) translate(-50%, -50%)`;
     }
 
     requestAnimationFrame(renderCursorAndSpotlight);
@@ -190,35 +190,44 @@ function initScrollReveal() {
   reveals.forEach((el) => observer.observe(el));
 }
 
-// STICKY HEADER & ACTIVE NAV LINK
+// STICKY HEADER & ACTIVE NAV LINK (60fps Throttled & Passive)
 function initNavigation() {
   const header = document.querySelector('.site-header');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  let isTicking = false;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!isTicking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (scrollY > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        let current = '';
+        sections.forEach((sec) => {
+          const secTop = sec.offsetTop - 120;
+          const secHeight = sec.clientHeight;
+          if (scrollY >= secTop && scrollY < secTop + secHeight) {
+            current = sec.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+
+        isTicking = false;
+      });
+      isTicking = true;
     }
-
-    let current = '';
-    sections.forEach((sec) => {
-      const secTop = sec.offsetTop - 120;
-      const secHeight = sec.clientHeight;
-      if (window.scrollY >= secTop && window.scrollY < secTop + secHeight) {
-        current = sec.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
+  }, { passive: true });
 }
 
 // CERTIFICATE FILTERING & INSPECT TRIGGERS

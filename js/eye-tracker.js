@@ -82,8 +82,25 @@ class AxolotlMascotTracker {
     // Idle Detection for Yawning and Sleeping with Zzzz bubbles
     this.initIdleDetection();
 
+    // Cache eye socket coordinates to eliminate layout reflow in 60fps render loop
+    this.eyeCenters = [];
+    this.updateEyeCenters();
+    window.addEventListener('resize', () => this.updateEyeCenters(), { passive: true });
+    window.addEventListener('scroll', () => this.updateEyeCenters(), { passive: true });
+
     // Start tracking render loop
     this.animate();
+  }
+
+  updateEyeCenters() {
+    this.eyeCenters = [];
+    this.sockets.forEach((socket) => {
+      const rect = socket.getBoundingClientRect();
+      this.eyeCenters.push({
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2
+      });
+    });
   }
 
   initIdleDetection() {
@@ -225,17 +242,14 @@ class AxolotlMascotTracker {
   }
 
   animate() {
-    if (!this.isHappyBlushing && !this.isBlinking && !this.isYawning && !this.isSleeping) {
-      this.sockets.forEach((socket, index) => {
+    if (!this.isHappyBlushing && !this.isBlinking && !this.isYawning && !this.isSleeping && this.eyeCenters.length) {
+      for (let index = 0; index < this.sockets.length; index++) {
         const pupil = this.pupils[index];
-        if (!pupil) return;
+        const center = this.eyeCenters[index];
+        if (!pupil || !center) continue;
 
-        const rect = socket.getBoundingClientRect();
-        const eyeCenterX = rect.left + rect.width / 2;
-        const eyeCenterY = rect.top + rect.height / 2;
-
-        const dx = this.mouseX - eyeCenterX;
-        const dy = this.mouseY - eyeCenterY;
+        const dx = this.mouseX - center.x;
+        const dy = this.mouseY - center.y;
         const distance = Math.hypot(dx, dy);
         const angle = Math.atan2(dy, dx);
 
@@ -245,7 +259,7 @@ class AxolotlMascotTracker {
         const targetY = Math.sin(angle) * clampedDist;
 
         pupil.style.transform = `translate(${targetX}px, ${targetY}px)`;
-      });
+      }
     }
 
     requestAnimationFrame(() => this.animate());

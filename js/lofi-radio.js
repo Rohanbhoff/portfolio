@@ -129,6 +129,11 @@ class LiveInternetRadio {
     this.audio.addEventListener('pause', () => {
       this.isPlaying = false;
       if (this.playIcon) this.playIcon.textContent = '▶';
+      if (this.animId) {
+        cancelAnimationFrame(this.animId);
+        this.animId = null;
+      }
+      this.drawVisualizer();
     });
   }
 
@@ -163,6 +168,11 @@ class LiveInternetRadio {
     this.audio.pause();
     this.isPlaying = false;
     if (this.playIcon) this.playIcon.textContent = '▶';
+    if (this.animId) {
+      cancelAnimationFrame(this.animId);
+      this.animId = null;
+    }
+    this.drawVisualizer();
   }
 
   changeStation(direction) {

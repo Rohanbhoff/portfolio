@@ -261,13 +261,16 @@ body {
 
 @keyframes seaAmbianceGlowCycle {
   0% {
-    filter: blur(22px) brightness(1.02);
+    opacity: 0.36;
+    filter: blur(22px) brightness(1.0);
   }
   50% {
-    filter: blur(20px) brightness(1.18);
+    opacity: 0.48;
+    filter: blur(22px) brightness(1.15);
   }
   100% {
-    filter: blur(24px) brightness(1.08);
+    opacity: 0.40;
+    filter: blur(22px) brightness(1.05);
   }
 }
 
@@ -392,9 +395,10 @@ body {
   background: radial-gradient(circle, rgba(0, 210, 255, 0.12), rgba(157, 78, 221, 0.08), transparent 70%);
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   z-index: 0;
-  animation: spotlightHue 12s linear infinite;
+  will-change: transform;
+  contain: paint layout;
 }
 
 @keyframes spotlightHue {
@@ -459,49 +463,28 @@ body {
 
 .ambient-color-glow,
 .btn-liquid,
-.btn-glass-outline,
 .status-chip,
-.gradient-text-blue,
-.gradient-text-pink,
 .nav-badge-btn,
 .arcade-dock-btn,
-.badge-tech,
-.feature-tag,
-.project-tag,
-.project-category-tag,
-.project-status-tag,
-.tech-pill,
-.stat-chip,
-.telemetry-val,
 .category-pill.active,
 .cert-filter-pill.active,
-.highlight-badge,
-.tag-pill,
-.section-tag,
-.about-greeting-badge,
-.category-icon-svg-wrap,
-.ui-switch input:checked+.slider .circle,
-.social-icon-btn:hover {
+.ui-switch input:checked+.slider .circle {
   animation: softColorAmbiance 12s ease-in-out infinite alternate;
 }
 
-/* Continuous slow subtle color-breathing borders on cards */
+/* Continuous slow subtle color-breathing borders on cards (GPU-optimized border cycle) */
 @keyframes cardContinuousBorderCycle {
   0% {
-    border-color: rgba(0, 210, 255, 0.32);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32), 0 0 14px rgba(0, 210, 255, 0.12);
+    border-color: rgba(0, 210, 255, 0.35);
   }
   33% {
-    border-color: rgba(157, 78, 221, 0.36);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32), 0 0 14px rgba(157, 78, 221, 0.14);
+    border-color: rgba(157, 78, 221, 0.38);
   }
   66% {
-    border-color: rgba(255, 42, 133, 0.32);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32), 0 0 14px rgba(255, 42, 133, 0.12);
+    border-color: rgba(255, 42, 133, 0.35);
   }
   100% {
-    border-color: rgba(0, 210, 255, 0.32);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32), 0 0 14px rgba(0, 210, 255, 0.12);
+    border-color: rgba(0, 210, 255, 0.35);
   }
 }
 
@@ -509,6 +492,7 @@ body {
 .project-card-large,
 .skill-category-card,
 .contact-single-container {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32), 0 0 14px rgba(0, 210, 255, 0.12);
   animation: cardContinuousBorderCycle 11s ease-in-out infinite alternate;
 }
 
@@ -1711,6 +1695,7 @@ section {
   gap: 2rem;
   animation: scrollCertificates 45s linear infinite;
   padding: 1.5rem 0;
+  will-change: transform;
 }
 
 .certificates-wrapper:hover .certificates-track-container {
