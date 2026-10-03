@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Rohan Verma | Computer Vision &amp; AI Engineer</title>
+  <meta name="title" content="Rohan Verma | Computer Vision &amp; AI Engineer">
+  <meta name="description" content="Portfolio of Rohan Verma — Computer Vision, Edge AI, and Full-Stack Software Engineer. B.Tech CSE at KIIT University (CGPA 8.94).">
+  <meta name="keywords" content="Rohan Verma, AI Engineer, Computer Vision, YOLOv8, PyTorch, TPCODL, KIIT, Bhubaneswar, Full-Stack, Portfolio">
+  <link rel="canonical" href="https://rohanbhoff.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rohanbhoff.github.io/portfolio/">
+  <meta property="og:title" content="Rohan Verma | Computer Vision &amp; AI Engineer">
+  <meta property="og:description" content="Portfolio of Rohan Verma — Computer Vision, Edge AI, and Full-Stack Software Engineer. B.Tech CSE at KIIT University.">
+
+  <!-- Signature Cute Axolotl Mascot Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon-axolotl.svg">
+
+  <!-- Core Stylesheet (Blue, Pink, Purple Palette) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Continuous Color-Cycling Mouse Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Color Mouse Spotlight Tracking (Dribbble Interaction) -->
+  <div class="cursor-spotlight" id="cursorSpotlight"></div>
+
+  <!-- Ambient Continuous Sea Waves & Random Morphing Light Ribbons (No 360 rotating line) -->
+  <div class="bg-canvas-container">
+    <div class="sea-waves-overlay">
+      <div class="sea-wave sea-wave-1"></div>
+      <div class="sea-wave sea-wave-2"></div>
+      <div class="sea-wave sea-wave-3"></div>
+      <div class="sea-wave sea-wave-4"></div>
+      <div class="ambient-light-ribbon ribbon-cyan"></div>
+      <div class="ambient-light-ribbon ribbon-purple"></div>
+      <div class="ambient-light-ribbon ribbon-pink"></div>
+    </div>
+    <div class="bg-grid-overlay"></div>
+  </div>
+
+  <!-- ===================================================================
+       HEADER & NAVIGATION WITH CUTE AXOLOTL EYE-TRACKER
+       =================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      
+      <!-- Cute Axolotl Brand with Live Cursor Tracking & Petal Gills -->
+      <a href="#" class="brand-axolotl-wrap" title="Axolotl Mascot: Click me for cute squeak!">
+        <div class="axolotl-chubby-mascot" id="axolotlMascot">
+          <!-- Floating Sleeping ZZZ Bubbles (When Inactive) -->
+          <div class="axolotl-sleep-zzz" id="axolotlSleepZzz"></div>
+
+          <!-- 3 Rounded Petal Gills on Left -->
+          <div class="gills-cluster gills-left">
+            <span class="petal-gill petal-gill-1"></span>
+            <span class="petal-gill petal-gill-2"></span>
+            <span class="petal-gill petal-gill-3"></span>
+          </div>
+
+          <!-- Chubby Soft-Pink Head -->
+          <div class="axolotl-head" id="axolotlHead">
+            <!-- Big Shiny Eyes -->
+            <div class="axolotl-eyes">
+              <div class="axolotl-eye-socket" id="eyeLeft">
+                <div class="axolotl-pupil-shiny"></div>
+              </div>
+              <div class="axolotl-eye-socket" id="eyeRight">
+                <div class="axolotl-pupil-shiny"></div>
+              </div>
+            </div>
+
+            <!-- Soft Rosy Blush Cheeks -->
+            <div class="axolotl-blush blush-l"></div>
+            <div class="axolotl-blush blush-r"></div>
+
+            <!-- Cat-Smile Mouth: Lying-Down 3 (ε / ω) -->
+            <div class="axolotl-cat-smile">
+              <svg class="cat-smile-svg" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 2 C2.5 5, 4.5 5, 6 2.2 C7.5 5, 9.5 5, 11 2" stroke="#641b30" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 3 Rounded Petal Gills on Right -->
+          <div class="gills-cluster gills-right">
+            <span class="petal-gill petal-gill-1"></span>
+            <span class="petal-gill petal-gill-2"></span>
+            <span class="petal-gill petal-gill-3"></span>
+          </div>
+        </div>
+
+        <span>Rohan Verma</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#certificates" class="nav-link">Certificates</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- EXACT Uiverse.io Light/Dark Switch -->
+        <label class="ui-switch" title="Toggle Light / Dark Mode">
+          <input type="checkbox" id="themeToggleCheckbox" checked>
+          <div class="slider">
+            <div class="circle"></div>
+          </div>
+        </label>
+
+        <!-- Aesthetic Floating Resume Button (Smooth 60FPS Breathing) -->
+        <a href="https://drive.google.com/file/d/1Yp0_QNtdtB8bj5yTRTGncAnQjI6GtxLh/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-badge-btn nav-resume-floating" id="resumeBadgeBtn">
+          <svg class="resume-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <polyline points="9 15 12 18 15 15"></polyline>
+          </svg>
+          <span class="resume-btn-text">Resume</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       HERO SECTION (BALANCED EXPANSIVE LAYOUT - NO RIGHT CARD)
+       =================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content-centered reveal-on-scroll is-visible">
+      <div class="status-chip">
+        <span class="cyber-beacon">
+          <span class="cyber-beacon-core"></span>
+          <span class="cyber-beacon-ring"></span>
+        </span>
+        <span>B.Tech CSE '27 • KIIT Bhubaneswar • CGPA: 8.94</span>
+      </div>
+
+      <h1 class="hero-title">
+        Architecting <span class="gradient-text-blue">Computer Vision</span> &amp; <span class="gradient-text-pink">Intelligent Edge</span> Systems.
+      </h1>
+
+      <p class="hero-subtitle">
+        Building high-performance machine learning platforms, edge-quantized vision models, and resilient full-stack applications. Passionate about bridging theoretical algorithms with real-world production environments.
+      </p>
+
+      <!-- Prominent Balanced Telemetry Strip (General About-Me Metrics) -->
+      <div class="hero-telemetry-strip">
+        <div class="telemetry-item">
+          <span class="telemetry-val">8.94</span>
+          <span class="telemetry-label">B.Tech CGPA</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-val pink">'27</span>
+          <span class="telemetry-label">KIIT CSE Class</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-val purple">10+</span>
+          <span class="telemetry-label">Built Projects</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-val">9+</span>
+          <span class="telemetry-label">Certifications</span>
+        </div>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="#projects" class="btn-liquid">
+          <span>Explore Projects</span>
+          <svg class="btn-cta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+          </svg>
+        </a>
+        <a href="#certificates" class="btn-glass-outline">
+          <span>Certifications</span>
+          <svg class="btn-cta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn-glass-outline">
+          <span>Let's Talk</span>
+          <svg class="btn-cta-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       ABOUT ME SECTION (BALANCED NARRATIVE LIKE YASH & VISHNU)
+       =================================================================== -->
+  <section class="about-section" id="about">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">Engineering Practical Intelligence</h2>
+      <p class="section-description">
+        A grounded software and AI developer focused on solving real-world challenges through data-driven systems, clean code, and edge efficiency.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      
+      <!-- Narrative Card -->
+      <div class="about-narrative-card reveal-on-scroll appear-left">
+        <p class="about-p">
+          <span class="about-greeting-badge">
+            <svg class="greeting-spark-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="m12 2 2.4 6.8 6.8 2.4-6.8 2.4L12 20.4l-2.4-6.8-6.8-2.4 6.8-2.4L12 2z"/>
+            </svg>
+            Hello World!
+          </span>
+          <b>I'm Rohan Verma</b>, a Computer Science undergraduate at <b>KIIT Deemed to be University, Bhubaneswar</b> (Class of 2027, <b>CGPA 8.94</b>).
+        </p>
+        <p class="about-p">
+          I enjoy building software across the stack — from deep computer vision and machine learning models to responsive web applications and security automation. Rather than treating AI as isolated research, my focus is on <b>deployability</b>: training models on dual Tesla T4 GPUs, compressing weights through <b>INT8 quantization</b>, and writing custom mathematical conflict-resolution logic so algorithms perform safely on low-power devices in the field.
+        </p>
+        <p class="about-p">
+          Whether optimizing client-side retrieval algorithms for <b>KIIT Finder</b>, deploying SIEM/SOAR incident response pipelines for network security, or performing exploratory data analysis to surface hidden trends, I strive to build software that is robust, scalably engineered, and delightful to interact with.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="about-features-card reveal-on-scroll appear-right">
+        
+        <div class="feature-box feature-box-blue">
+          <div class="feature-icon-badge blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-svg">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3m0 14v3M2 12h3m14 0h3" stroke-width="1.5" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="feature-title">Computer Vision &amp; Edge AI</h4>
+            <p class="feature-desc">Trained custom YOLOv8-seg models for industrial PPE verification at TPCODL, compressed to 3.3 MB for real-time mobile verification.</p>
+          </div>
+        </div>
+
+        <div class="feature-box feature-box-pink">
+          <div class="feature-icon-badge pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-svg">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+              <polyline points="7 8 10 10 7 12"/>
+              <line x1="12" y1="12" x2="16" y2="12"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="feature-title">Software Engineering &amp; Client Logic</h4>
+            <p class="feature-desc">Built KIIT Finder item recovery platform with zero-latency client-side metadata filtering and campus hotspot analytics.</p>
+          </div>
+        </div>
+
+        <div class="feature-box feature-box-purple">
+          <div class="feature-icon-badge purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-svg">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <rect x="9" y="10" width="6" height="5" rx="1" stroke-width="1.6"/>
+              <path d="M10 10V8a2 2 0 1 1 4 0v2" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="feature-title">Cybersecurity &amp; SOAR Automation</h4>
+            <p class="feature-desc">Architected automated SOC playbooks integrating Wazuh SIEM, Shuffle SOAR, and TheHive for MITRE ATT&amp;CK incident containment.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CERTIFICATES - HORIZONTAL AUTO-SCROLLING TRACK
+       =================================================================== -->
+  <section class="certificates-section" id="certificates">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Credentials</span>
+      <h2 class="section-title">Verified Certifications</h2>
+      <p class="section-description">
+        Professional credentials across Data Science, AI Implementation, SAP Analytics, and Corporate Governance. Hover to pause; click any card to inspect full high-resolution certificate.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="cert-filter-bar">
+        <button class="cert-filter-pill active" data-filter="all">All (9)</button>
+        <button class="cert-filter-pill" data-filter="ai">AI &amp; Data Science</button>
+        <button class="cert-filter-pill" data-filter="enterprise">Enterprise &amp; Cloud</button>
+        <button class="cert-filter-pill" data-filter="leadership">Ethics &amp; Governance</button>
+      </div>
+    </div>
+
+    <!-- Horizontal Auto-Scrolling Infinite Ribbon -->
+    <div class="certificates-wrapper">
+      <div class="certificates-track-container" id="certTrack">
+        
+        <!-- 1. SAP Data Analytics Engineer -->
+        <div class="certificate-card" data-category="enterprise" data-title="SAP DATA/Analytics Engineer" data-org="ExcelR Edtech & KIIT University" data-date="Feb - Mar 2026" data-id="57621 / ExcelR">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/EXCELR-57621-Rohan Verma.png" alt="SAP Data Analytics Engineer Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">45 Hours Training</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">ExcelR &amp; KIIT University</span>
+            <h3 class="certificate-title">SAP DATA / Analytics Engineer</h3>
+            <div class="certificate-meta">
+              <span>Issued: Jun 2026 • ID: 57621</span>
+              <a href="https://drive.google.com/file/d/1ikiwD6uJUCsggdSnQ27ovzny3cO-oV2w/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. The Ultimate Job Ready Data Science Course (CodeWithHarry) -->
+        <div class="certificate-card" data-category="ai" data-title="The Ultimate Job Ready Data Science Course" data-org="CodeWithHarry" data-date="Dec 12, 2025" data-id="CWH-THE-ULTIMATE-JOB-READY-DATA-SCIENCE-COURSE-XW4GO4YT">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/The_Ultimate_Job_Ready_Data_Science_Course_Certificate.png" alt="Data Science Course Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">Job Ready DS</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">CodeWithHarry</span>
+            <h3 class="certificate-title">The Ultimate Job Ready Data Science Course</h3>
+            <div class="certificate-meta">
+              <span>Completed: Dec 2025</span>
+              <a href="https://drive.google.com/file/d/1J30GcH8JffmxlQSf92fEsQYpEJOLtGWZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Complete Data Science Bootcamp 2025 (Udemy) -->
+        <div class="certificate-card" data-category="ai" data-title="The Data Science Course: Complete Bootcamp 2025" data-org="365 Careers / Udemy" data-date="Dec 12, 2025" data-id="UC-2397ea2e-54ca-47e1-ba04-8c8e8c2b07a0">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/UC-2397ea2e-54ca-47e1-ba04-8c8e8c2b07a0.png" alt="Udemy Data Science Bootcamp" class="certificate-img">
+            <span class="certificate-overlay-badge">32 Total Hours</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">365 Careers &amp; Udemy</span>
+            <h3 class="certificate-title">Complete Data Science Bootcamp 2025</h3>
+            <div class="certificate-meta">
+              <span>Completed: Dec 2025</span>
+              <a href="https://drive.google.com/file/d/185sktfzzUoIQFf1tLt7oM7nGROzBR2Al/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Google for Education AI Implementation -->
+        <div class="certificate-card" data-category="ai" data-title="Student AI Masterclass - AI Implementation Program" data-org="Google for Education & upEducators" data-date="Apr 25, 2026" data-id="UP-EDU-AI-2026">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/ROHAN VERMA - Certificate.png" alt="Google for Education Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">AI Masterclass</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">Google for Education</span>
+            <h3 class="certificate-title">AI Implementation Program &amp; Masterclass</h3>
+            <div class="certificate-meta">
+              <span>Issued: Apr 2026</span>
+              <a href="https://drive.google.com/file/d/1KpR1j6q6haoNEAO3vDuE_gIjxOgQXo3q/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Google for Education Certified Badge -->
+        <div class="certificate-card" data-category="ai" data-title="Google for Education Student AI Program" data-org="Google for Education" data-date="2026 - 2029" data-id="GFE-STU-2026-2029">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Google for Education.png" alt="Google for Education Program" class="certificate-img">
+            <span class="certificate-overlay-badge">Valid to 2029</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">Google for Education</span>
+            <h3 class="certificate-title">Student AI Implementation Credential</h3>
+            <div class="certificate-meta">
+              <span>Validity: 2026 – 2029</span>
+              <a href="https://drive.google.com/file/d/1yL0mtgoQYSjhF2vMeqRrmZK25h3ninl4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Crack the Interview @ Campus Placement -->
+        <div class="certificate-card" data-category="leadership" data-title="Crack the Interview @ Campus Placement" data-org="KIIT Kareer School & Katallyst" data-date="May - Jun 2026" data-id="KCPL/KIIT-26/1208S018">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/23053446_ROHAN_VERMA.png" alt="Crack the Interview Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">Roll: 23053446</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">KIIT Kareer School</span>
+            <h3 class="certificate-title">Crack the Interview @ Campus Placement</h3>
+            <div class="certificate-meta">
+              <span>Ref: KCPL/KIIT-26/1208S018</span>
+              <a href="https://drive.google.com/file/d/1TlKv6s_iV6VwXm84GW5Imy3d0WXIX4tE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Ethical Decision Making (Univ of Colorado Boulder) -->
+        <div class="certificate-card" data-category="leadership" data-title="Ethical Decision Making for Success in Tech" data-org="University of Colorado Boulder / Coursera" data-date="Mar 15, 2026" data-id="ZI3LDAHONPED">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Coursera ZI3LDAHONPED.png" alt="Ethical Decision Making Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">UC Boulder</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">UC Boulder &amp; Coursera</span>
+            <h3 class="certificate-title">Ethical Decision Making in Tech</h3>
+            <div class="certificate-meta">
+              <span>coursera.org/verify/ZI3LDAHONPED</span>
+              <a href="https://drive.google.com/file/d/1_PYpsWS4Aqp01OaB0VdRBluRJulUljwC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Business for Good (London Business School) -->
+        <div class="certificate-card" data-category="leadership" data-title="Business for Good: Fundamentals of Corporate Responsibility" data-org="London Business School / Coursera" data-date="Mar 13, 2026" data-id="5YIGHLTC2AA9">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Coursera 5YIGHLTC2AA9.png" alt="Business for Good Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">London Business School</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">London Business School</span>
+            <h3 class="certificate-title">Fundamentals of Corporate Responsibility</h3>
+            <div class="certificate-meta">
+              <span>coursera.org/verify/5YIGHLTC2AA9</span>
+              <a href="https://drive.google.com/file/d/13Cwv3DuclqBc6RMBoodoYBlxnf0HH6bv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Corporate Governance (Starweaver) -->
+        <div class="certificate-card" data-category="leadership" data-title="Corporate Governance" data-org="Starweaver / Coursera" data-date="Feb 16, 2026" data-id="IMZZZB4J02VG">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Coursera IMZZZB4J02VG.png" alt="Corporate Governance Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">Corporate Governance</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">Starweaver &amp; Coursera</span>
+            <h3 class="certificate-title">Corporate Governance Standards</h3>
+            <div class="certificate-meta">
+              <span>coursera.org/verify/IMZZZB4J02VG</span>
+              <a href="https://drive.google.com/file/d/1SPwBddZMm1HwUu9-JurvGY43pagTbpDk/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- DUPLICATE SET 2 FOR CONTINUOUS SEAMLESS MARQUEE -->
+        <!-- 1. SAP Data Analytics Engineer -->
+        <div class="certificate-card" data-category="enterprise" data-title="SAP DATA/Analytics Engineer" data-org="ExcelR Edtech & KIIT University" data-date="Feb - Mar 2026" data-id="57621 / ExcelR">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/EXCELR-57621-Rohan Verma.png" alt="SAP Data Analytics Engineer Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">45 Hours Training</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">ExcelR &amp; KIIT University</span>
+            <h3 class="certificate-title">SAP DATA / Analytics Engineer</h3>
+            <div class="certificate-meta">
+              <span>Issued: Jun 2026 • ID: 57621</span>
+              <a href="https://drive.google.com/file/d/1ikiwD6uJUCsggdSnQ27ovzny3cO-oV2w/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. The Ultimate Job Ready Data Science Course (CodeWithHarry) -->
+        <div class="certificate-card" data-category="ai" data-title="The Ultimate Job Ready Data Science Course" data-org="CodeWithHarry" data-date="Dec 12, 2025" data-id="CWH-THE-ULTIMATE-JOB-READY-DATA-SCIENCE-COURSE-XW4GO4YT">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/The_Ultimate_Job_Ready_Data_Science_Course_Certificate.png" alt="Data Science Course Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">Job Ready DS</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">CodeWithHarry</span>
+            <h3 class="certificate-title">The Ultimate Job Ready Data Science Course</h3>
+            <div class="certificate-meta">
+              <span>Completed: Dec 2025</span>
+              <a href="https://drive.google.com/file/d/1J30GcH8JffmxlQSf92fEsQYpEJOLtGWZ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Complete Data Science Bootcamp 2025 (Udemy) -->
+        <div class="certificate-card" data-category="ai" data-title="The Data Science Course: Complete Bootcamp 2025" data-org="365 Careers / Udemy" data-date="Dec 12, 2025" data-id="UC-2397ea2e-54ca-47e1-ba04-8c8e8c2b07a0">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/UC-2397ea2e-54ca-47e1-ba04-8c8e8c2b07a0.png" alt="Udemy Data Science Bootcamp" class="certificate-img">
+            <span class="certificate-overlay-badge">32 Total Hours</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">365 Careers &amp; Udemy</span>
+            <h3 class="certificate-title">Complete Data Science Bootcamp 2025</h3>
+            <div class="certificate-meta">
+              <span>Completed: Dec 2025</span>
+              <a href="https://drive.google.com/file/d/185sktfzzUoIQFf1tLt7oM7nGROzBR2Al/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Google for Education AI Implementation -->
+        <div class="certificate-card" data-category="ai" data-title="Student AI Masterclass - AI Implementation Program" data-org="Google for Education & upEducators" data-date="Apr 25, 2026" data-id="UP-EDU-AI-2026">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/ROHAN VERMA - Certificate.png" alt="Google for Education Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">AI Masterclass</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">Google for Education</span>
+            <h3 class="certificate-title">AI Implementation Program &amp; Masterclass</h3>
+            <div class="certificate-meta">
+              <span>Issued: Apr 2026</span>
+              <a href="https://drive.google.com/file/d/1KpR1j6q6haoNEAO3vDuE_gIjxOgQXo3q/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Google for Education Certified Badge -->
+        <div class="certificate-card" data-category="ai" data-title="Google for Education Student AI Program" data-org="Google for Education" data-date="2026 - 2029" data-id="GFE-STU-2026-2029">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Google for Education.png" alt="Google for Education Program" class="certificate-img">
+            <span class="certificate-overlay-badge">Valid to 2029</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">Google for Education</span>
+            <h3 class="certificate-title">Student AI Implementation Credential</h3>
+            <div class="certificate-meta">
+              <span>Validity: 2026 – 2029</span>
+              <a href="https://drive.google.com/file/d/1yL0mtgoQYSjhF2vMeqRrmZK25h3ninl4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Crack the Interview @ Campus Placement -->
+        <div class="certificate-card" data-category="leadership" data-title="Crack the Interview @ Campus Placement" data-org="KIIT Kareer School & Katallyst" data-date="May - Jun 2026" data-id="KCPL/KIIT-26/1208S018">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/23053446_ROHAN_VERMA.png" alt="Crack the Interview Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">Roll: 23053446</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">KIIT Kareer School</span>
+            <h3 class="certificate-title">Crack the Interview @ Campus Placement</h3>
+            <div class="certificate-meta">
+              <span>Ref: KCPL/KIIT-26/1208S018</span>
+              <a href="https://drive.google.com/file/d/1TlKv6s_iV6VwXm84GW5Imy3d0WXIX4tE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Ethical Decision Making (Univ of Colorado Boulder) -->
+        <div class="certificate-card" data-category="leadership" data-title="Ethical Decision Making for Success in Tech" data-org="University of Colorado Boulder / Coursera" data-date="Mar 15, 2026" data-id="ZI3LDAHONPED">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Coursera ZI3LDAHONPED.png" alt="Ethical Decision Making Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">UC Boulder</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">UC Boulder &amp; Coursera</span>
+            <h3 class="certificate-title">Ethical Decision Making in Tech</h3>
+            <div class="certificate-meta">
+              <span>coursera.org/verify/ZI3LDAHONPED</span>
+              <a href="https://drive.google.com/file/d/1_PYpsWS4Aqp01OaB0VdRBluRJulUljwC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Business for Good (London Business School) -->
+        <div class="certificate-card" data-category="leadership" data-title="Business for Good: Fundamentals of Corporate Responsibility" data-org="London Business School / Coursera" data-date="Mar 13, 2026" data-id="5YIGHLTC2AA9">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Coursera 5YIGHLTC2AA9.png" alt="Business for Good Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">London Business School</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">London Business School</span>
+            <h3 class="certificate-title">Fundamentals of Corporate Responsibility</h3>
+            <div class="certificate-meta">
+              <span>coursera.org/verify/5YIGHLTC2AA9</span>
+              <a href="https://drive.google.com/file/d/13Cwv3DuclqBc6RMBoodoYBlxnf0HH6bv/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Corporate Governance (Starweaver) -->
+        <div class="certificate-card" data-category="leadership" data-title="Corporate Governance" data-org="Starweaver / Coursera" data-date="Feb 16, 2026" data-id="IMZZZB4J02VG">
+          <div class="certificate-img-box">
+            <img src="assets/certificates/Coursera IMZZZB4J02VG.png" alt="Corporate Governance Certificate" class="certificate-img">
+            <span class="certificate-overlay-badge">Corporate Governance</span>
+            <button class="cert-inspect-overlay-btn" title="Inspect Fullscreen (Scroll wheel to zoom)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Inspect</span>
+            </button>
+          </div>
+          <div class="certificate-details">
+            <span class="certificate-org">Starweaver &amp; Coursera</span>
+            <h3 class="certificate-title">Corporate Governance Standards</h3>
+            <div class="certificate-meta">
+              <span>coursera.org/verify/IMZZZB4J02VG</span>
+              <a href="https://drive.google.com/file/d/1SPwBddZMm1HwUu9-JurvGY43pagTbpDk/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-drive-link-btn" title="View Official Certificate PDF on Google Drive">
+                <span>Credential</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="12" height="12"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FEATURED PROJECTS SECTION
+       =================================================================== -->
+  <section class="projects-section" id="projects">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Applied Work</span>
+      <h2 class="section-title">Production &amp; Research Systems</h2>
+      <p class="section-description">
+        Production-grade computer vision models, campus applications, and automated enterprise security pipelines.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      
+      <!-- PROJECT 1: TPCODL VISION AI & SURAKSHAKAVACH -->
+      <article class="project-card-large reveal-on-scroll">
+        <div class="project-info">
+          <div class="project-badge-strip">
+            <span class="project-category-tag">Industrial Edge AI &amp; Safety</span>
+            <span class="project-status-tag">Tata Power (TPCODL) Technology Centre • Jun–Aug 2026</span>
+          </div>
+
+          <h3 class="project-title">Vision AI (Web) &amp; SurakshaKavach (App) – Industrial PPE &amp; Field Safety</h3>
+          <p class="project-summary">
+            Engineered a dual-platform Computer Vision safety ecosystem safeguarding <b>Tata Power (TPCODL)</b> high-voltage field linemen and central safety management:
+            <br><br>
+            • <b>Vision AI (Web Platform)</b>: Centralized operations web dashboard featuring live webcam verification, drag-and-drop / clipboard upload triage, and real-time model evaluation analytics (mAP@50, F1 curves, confusion matrices).
+            <br>
+            • <b>SurakshaKavach (Android App)</b>: Production on-device Kotlin mobile app integrating CameraX with an INT8 quantized YOLOv8-seg model for 3-FPS gated edge inference, custom <b>Safety-First IoU Conflict Resolution</b>, and audible violation alarms to protect linemen in high-voltage zones.
+          </p>
+
+          <div class="project-metrics-grid">
+            <div class="project-metric-box">
+              <span class="metric-number">92.1%</span>
+              <span class="metric-desc">Precision Rate</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">3.3 MB</span>
+              <span class="metric-desc">INT8 TFLite Model</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">3-FPS</span>
+              <span class="metric-desc">Gated Edge Inference</span>
+            </div>
+          </div>
+
+          <div class="tech-tags-list">
+            <span class="tech-pill">Vision AI Web Platform</span>
+            <span class="tech-pill">SurakshaKavach Mobile App</span>
+            <span class="tech-pill">Python &amp; Flask</span>
+            <span class="tech-pill">Kotlin &amp; CameraX</span>
+            <span class="tech-pill">YOLOv8-seg</span>
+            <span class="tech-pill">INT8 Quantization</span>
+            <span class="tech-pill">Safety-First IoU</span>
+          </div>
+
+          <div class="project-cta-actions">
+            <a href="https://github.com/Rohanbhoff/Yolov8-Image-Segmentation" target="_blank" rel="noopener noreferrer" class="btn-liquid">
+              <span>View Source Code</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Media Gallery with Exact Extracted Figures in Sequence (Images 51, 32, 48, 53, 54, 58, 60, 61, 62, 65) -->
+        <div class="project-media-col">
+          <img src="assets/projects/tata-power/image51.png" alt="Vision AI Performance Metrics" class="media-main-preview" id="tpcodlMainPreview">
+          <div class="media-thumbnail-strip">
+            <button class="media-thumb-btn active" data-preview-src="assets/projects/tata-power/image51.png" title="Image 51: Multi-Class Confusion Matrix & Performance Metrics">
+              <img src="assets/projects/tata-power/image51.png" alt="Image 51">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image32.png" title="Image 32: Precision-Recall Curves & Training Loss Progression">
+              <img src="assets/projects/tata-power/image32.png" alt="Image 32">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image48.png" title="Image 48: Live Web Triage Dashboard & Drag-and-Drop Verification">
+              <img src="assets/projects/tata-power/image48.png" alt="Image 48">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image53.jpeg" title="Image 53: SurakshaKavach App - Welcome & Splash HUD">
+              <img src="assets/projects/tata-power/image53.jpeg" alt="Image 53">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image54.jpeg" title="Image 54: SurakshaKavach App - Safety Alert Drawer & Incidents">
+              <img src="assets/projects/tata-power/image54.jpeg" alt="Image 54">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image58.jpeg" title="Image 58: SurakshaKavach App - Live CameraX Real-Time HUD">
+              <img src="assets/projects/tata-power/image58.jpeg" alt="Image 58">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image60.jpeg" title="Image 60: SurakshaKavach App - INT8 Quantization Settings">
+              <img src="assets/projects/tata-power/image60.jpeg" alt="Image 60">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image61.jpeg" title="Image 61: SurakshaKavach App - Compliance Telemetry & Audits">
+              <img src="assets/projects/tata-power/image61.jpeg" alt="Image 61">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image62.jpeg" title="Image 62: SurakshaKavach App - Precision/Recall Benchmark Chart">
+              <img src="assets/projects/tata-power/image62.jpeg" alt="Image 62">
+            </button>
+            <button class="media-thumb-btn" data-preview-src="assets/projects/tata-power/image65.jpeg" title="Image 65: SurakshaKavach App - Incident History & Field Logs">
+              <img src="assets/projects/tata-power/image65.jpeg" alt="Image 65">
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: KIIT FINDER -->
+      <article class="project-card-large reverse reveal-on-scroll">
+        <div class="project-info">
+          <div class="project-badge-strip">
+            <span class="project-category-tag">Full-Stack Web &amp; Client Logic</span>
+            <span class="project-status-tag">KIIT App Dev Lab Team Project</span>
+          </div>
+
+          <h3 class="project-title">KIIT Finder – Smart Campus Item Recovery</h3>
+          <p class="project-summary">
+            Designed client-side search and filtering logic using structured metadata, keyword-matching, and tag-based categorization to connect lost campus belongings with owners. Optimized JavaScript data flow and DOM rendering for instant responsiveness, backed by campus hotspot analytics.
+          </p>
+
+          <div class="project-metrics-grid">
+            <div class="project-metric-box">
+              <span class="metric-number">&lt; 15ms</span>
+              <span class="metric-desc">Filter Latency</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">20+</span>
+              <span class="metric-desc">Campuses Mapped</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">100%</span>
+              <span class="metric-desc">Zero Dependency</span>
+            </div>
+          </div>
+
+          <div class="tech-tags-list">
+            <span class="tech-pill">JavaScript ES6+</span>
+            <span class="tech-pill">HTML5 Canvas</span>
+            <span class="tech-pill">CSS3 Glassmorphism</span>
+            <span class="tech-pill">Campus Hotspots</span>
+            <span class="tech-pill">Fuzzy Matching</span>
+          </div>
+
+          <div class="project-cta-actions">
+            <a href="https://kiit-finder.lovable.app/" target="_blank" rel="noopener noreferrer" class="btn-liquid">
+              <span>Visit Live Platform</span>
+              <svg class="btn-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </a>
+            <a href="https://github.com/Rohanbhoff/KiiTFinder" target="_blank" rel="noopener noreferrer" class="btn-glass-outline">
+              <span>GitHub Repo</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-media-col">
+          <img src="assets/projects/Screenshot_2026-02-13_103147.png" alt="KIIT Finder Interface" class="media-main-preview">
+        </div>
+      </article>
+
+      <!-- PROJECT 3: SIEM AUTOMATION & SOAR PIPELINE -->
+      <article class="project-card-large reveal-on-scroll">
+        <div class="project-info">
+          <div class="project-badge-strip">
+            <span class="project-category-tag">Cybersecurity &amp; Automation</span>
+            <span class="project-status-tag">B.Tech Sem 6 Mini Project • Guided by Dr. Bhaswati Sahoo</span>
+          </div>
+
+          <h3 class="project-title">SIEM Automation with SOAR Pipeline Integration</h3>
+          <p class="project-summary">
+            Architected an automated Security Information and Event Management (SIEM) and SOAR workflow integrating Wazuh, Shuffle, and TheHive across VirtualBox virtual machines. Automates real-time incident triage, MITRE ATT&amp;CK correlation, alerting, and autonomous containment actions (malicious IP drops &amp; infected endpoint isolation).
+          </p>
+
+          <div class="project-metrics-grid">
+            <div class="project-metric-box">
+              <span class="metric-number">MITRE</span>
+              <span class="metric-desc">ATT&amp;CK Mapped</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">&lt; 3 sec</span>
+              <span class="metric-desc">Auto-Containment</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">Multi-VM</span>
+              <span class="metric-desc">SOC Cluster</span>
+            </div>
+          </div>
+
+          <div class="tech-tags-list">
+            <span class="tech-pill">Wazuh SIEM</span>
+            <span class="tech-pill">Shuffle SOAR</span>
+            <span class="tech-pill">TheHive</span>
+            <span class="tech-pill">Sysmon</span>
+            <span class="tech-pill">VirtualBox Cluster</span>
+            <span class="tech-pill">Elastic Common Schema</span>
+          </div>
+
+          <div class="project-cta-actions">
+            <a href="https://github.com/Rohanbhoff/Mini-Project-SIEM-Automation" target="_blank" rel="noopener noreferrer" class="btn-liquid">
+              <span>View Architecture</span>
+              <svg class="btn-action-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-media-col">
+          <img src="assets/projects/soar_logical_diagram.png" alt="SOAR Logical Architecture Diagram" class="media-main-preview">
+        </div>
+      </article>
+
+      <!-- PROJECT 4: CODERS OF BANGALORE & DELHI -->
+      <article class="project-card-large reverse reveal-on-scroll">
+        <div class="project-info">
+          <div class="project-badge-strip">
+            <span class="project-category-tag">Graph Algorithms &amp; Recommendation Systems</span>
+            <span class="project-status-tag">CodeBook Data Science Internship Project</span>
+          </div>
+
+          <h3 class="project-title">Coders of Bangalore &amp; Delhi – Social Graph &amp; Recommendation Engine</h3>
+          <p class="project-summary">
+            Engineered a zero-dependency social network intelligence system for developer community graphs on CodeBook. Developed an automated data-cleaning and schema-sanitization pipeline handling missing attributes, duplicate friendship edges, and inactive accounts using pure Python hash sets and dictionaries. Implemented a mutual-friend <b>People You May Know (PYMK)</b> algorithm with $O(V + E)$ graph traversal and a bipartite <b>Pages You Might Like</b> collaborative interest affinity scoring model ready for REST API integration with web clients.
+          </p>
+
+          <div class="project-metrics-grid">
+            <div class="project-metric-box">
+              <span class="metric-number">Zero-Dep</span>
+              <span class="metric-desc">Pure Algorithmic Core</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">O(V + E)</span>
+              <span class="metric-desc">Graph Traversal Speed</span>
+            </div>
+            <div class="project-metric-box">
+              <span class="metric-number">100%</span>
+              <span class="metric-desc">JSON Schema Sanitization</span>
+            </div>
+          </div>
+
+          <div class="tech-tags-list">
+            <span class="tech-pill">Python 3</span>
+            <span class="tech-pill">Social Graph Traversal</span>
+            <span class="tech-pill">Adjacency Lists</span>
+            <span class="tech-pill">Collaborative Filtering</span>
+            <span class="tech-pill">Bipartite Interest Graphs</span>
+            <span class="tech-pill">JSON REST APIs</span>
+          </div>
+
+          <div class="project-cta-actions">
+            <a href="https://github.com/Rohanbhoff" target="_blank" rel="noopener noreferrer" class="btn-liquid">
+              <span>Notebook Repository</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-media-col">
+          <img src="assets/projects/tpcodl_fig_2.png" alt="Social Graph and Matrix Analysis" class="media-main-preview">
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       TECHNICAL SKILLS MATRIX (WITHOUT DEDICATED LEETCODE CARD)
+       =================================================================== -->
+  <section class="skills-section" id="skills">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Toolkit</span>
+      <h2 class="section-title">Technical Competencies</h2>
+      <p class="section-description">
+        Demonstrated proficiency across AI &amp; deep learning stacks, data manipulation frameworks, web backends, and developer tooling.
+      </p>
+    </div>
+
+    <div class="skills-full-grid">
+      
+      <!-- Category 1: Computer Vision & AI -->
+      <div class="skill-category-card reveal-on-scroll">
+        <div class="category-header">
+          <div class="category-icon-svg-wrap blue-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-svg">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700;">Computer Vision &amp; Deep Learning</h3>
+        </div>
+        <div class="skills-badge-collection">
+          <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="PyTorch Machine Learning"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">PyTorch</a>
+          <a href="https://opencv.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="OpenCV Computer Vision"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">OpenCV</a>
+          <a href="https://blog.tensorflow.org/2019/06/tensorflow-integer-quantization.html" target="_blank" rel="noopener noreferrer" class="skill-badge" title="TensorFlow Integer Quantization"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow / TFLite">TFLite INT8</a>
+          <a href="https://docs.ultralytics.com/models/yolov8" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Ultralytics YOLOv8 Models"><img class="skill-icon-svg" src="assets/images/skills/ultralytics.png" alt="Ultralytics">Ultralytics YOLOv8</a>
+          <a href="https://www.cvat.ai/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="CVAT Annotation Platform"><img class="skill-icon-svg" src="assets/images/skills/cvat.png" alt="CVAT">CVAT</a>
+          <a href="https://roboflow.com/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Roboflow Dataset Platform"><img class="skill-icon-svg" src="assets/images/skills/roboflow.png" alt="Roboflow">Roboflow</a>
+          <a href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="LangChain LLM Framework"><span class="langchain-circle-wrap"><img class="skill-icon-svg" src="assets/images/skills/langchain.png" alt="LangChain"></span>LangChain &amp; RAG</a>
+        </div>
+      </div>
+
+      <!-- Category 2: Data Science & Analytics -->
+      <div class="skill-category-card reveal-on-scroll">
+        <div class="category-header">
+          <div class="category-icon-svg-wrap pink-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ff2a85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-svg">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700;">Data Science &amp; Machine Learning</h3>
+        </div>
+        <div class="skills-badge-collection">
+          <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Python Official Site"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</a>
+          <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Pandas Data Analysis"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</a>
+          <a href="https://numpy.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="NumPy Scientific Computing"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">NumPy</a>
+          <a href="http://scikit-learn.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Scikit-Learn Machine Learning"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn">Scikit-Learn</a>
+          <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="PostgreSQL Database"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL">SQL (PostgreSQL)</a>
+          <a href="https://matplotlib.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Matplotlib Visualizations"><img class="skill-icon-svg" src="assets/images/skills/matplotlib.png" alt="Matplotlib">Matplotlib</a>
+          <a href="https://seaborn.pydata.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Seaborn Statistical Visualization"><img class="skill-icon-svg" src="assets/images/skills/seaborn.png" alt="Seaborn">Seaborn</a>
+          <a href="https://learning.sap.com/certifications/sap-certified-associate-sap-business-data-cloud" target="_blank" rel="noopener noreferrer" class="skill-badge" title="SAP Business Data Cloud Certification"><img class="skill-icon-svg" src="assets/images/skills/sap.png" alt="SAP">SAP Data Analytics</a>
+        </div>
+      </div>
+
+      <!-- Category 3: Deployment & Web Development -->
+      <div class="skill-category-card reveal-on-scroll">
+        <div class="category-header">
+          <div class="category-icon-svg-wrap purple-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9d4edd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-svg">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.15rem; font-weight: 700;">Deployment &amp; Web Development</h3>
+        </div>
+        <div class="skills-badge-collection">
+          <a href="https://flask-restful.readthedocs.io/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Flask-RESTful Documentation"><img class="skill-icon-svg" src="assets/images/skills/flask.png" alt="Flask">Flask REST APIs</a>
+          <a href="https://www.w3schools.com/nodejs/nodejs_es6.asp" target="_blank" rel="noopener noreferrer" class="skill-badge" title="JavaScript ES6 Reference"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript ES6+</a>
+          <a href="https://www.cs.toronto.edu/~mashiyat/csc309/Lectures/Lecture3.pdf" target="_blank" rel="noopener noreferrer" class="skill-badge" title="HTML5 & CSS3 Web Architecture"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">HTML5 / CSS3</a>
+          <a href="https://kotlinlang.org/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Kotlin Official Language"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">Kotlin &amp; CameraX</a>
+          <a href="https://developer.android.com/media/camera/camerax" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Android CameraX Jetpack"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android Studio">Android Studio</a>
+          <a href="https://github.com/cartucho/OpenLabeling" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Cartucho OpenLabeling Repository"><img class="skill-icon-svg" src="assets/images/skills/github.png" alt="GitHub">Git &amp; GitHub</a>
+          <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Visual Studio Code"><img class="skill-icon-svg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">VS Code</a>
+          <a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer" class="skill-badge" title="Google Antigravity Engineering"><img class="skill-icon-svg" src="assets/images/skills/antigravity.png" alt="Google Antigravity">Google Antigravity</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       EXPERIENCE & EDUCATION TIMELINE
+       =================================================================== -->
+  <section class="experience-section" id="experience">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Path</span>
+      <h2 class="section-title">Experience &amp; Education</h2>
+      <p class="section-description">
+        Demonstrated industrial experience in production AI engineering combined with strong academic foundation in Computer Science.
+      </p>
+    </div>
+
+    <div class="timeline-container">
+      
+      <!-- Experience 1: TPCODL Intern -->
+      <div class="timeline-entry reveal-on-scroll appear-left">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <span class="timeline-date-chip">Jun 2026 – Aug 2026</span>
+              <h3 class="timeline-role">Computer Vision &amp; AI Intern</h3>
+              <h4 class="timeline-org">TPCODL Technology Centre • Bhubaneswar, Odisha</h4>
+            </div>
+            <a href="https://www.tpcentralodisha.com/" target="_blank" rel="noopener noreferrer" title="TPCODL Official Website">
+              <img src="assets/images/tpcodl_official.png" alt="TPCODL Official Logo" class="timeline-company-logo">
+            </a>
+          </div>
+          <p class="timeline-details">
+            Engineered an automated PPE compliance verification platform for high-voltage transmission field operations. Trained custom YOLOv8-seg models on dual Tesla T4 GPUs across 5,832 images, achieving 92.1% Precision and 90.0% mAP50. Deployed via a multithreaded Flask REST API featuring a custom Safety-First IoU Conflict Resolution algorithm and compressed weights to 3.3 MB (INT8 TFLite) for the SurakshaKavach Android mobile app.
+          </p>
+        </div>
+      </div>
+
+      <!-- Education 1: KIIT University -->
+      <div class="timeline-entry reveal-on-scroll appear-right">
+        <div class="timeline-node pink"></div>
+        <div class="timeline-card">
+          <div class="timeline-card-header">
+            <div>
+              <span class="timeline-date-chip">2023 – 2027 (Expected)</span>
+              <h3 class="timeline-role">B.Tech in Computer Science and Engineering</h3>
+              <h4 class="timeline-org">Kalinga Institute of Industrial Technology (KIIT), Bhubaneswar</h4>
+            </div>
+            <a href="https://kiit.ac.in/" target="_blank" rel="noopener noreferrer" title="KIIT University Official Website">
+              <img src="assets/images/kiit_official.png" alt="KIIT University Official Logo" class="timeline-company-logo">
+            </a>
+          </div>
+          <p class="timeline-details">
+            <b>CGPA: 8.94 / 10.0</b><br>
+            Relevant Coursework: Python Programming, Data Structures &amp; Algorithms, Database Management Systems (DBMS), Artificial Intelligence, Machine Learning, Computer Networks, Software Engineering.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CONTACT SECTION (UNIFIED CLEAN DIRECT MESSAGE FORM)
+       =================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="section-header reveal-on-scroll">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-title">Let's Connect &amp; Collaborate</h2>
+      <p class="section-description">
+        Interested in discussing computer vision systems, full-stack architectures, or AI engineering opportunities? Send a message directly to my inbox.
+      </p>
+    </div>
+
+    <div class="contact-single-container reveal-on-scroll">
+      <!-- Official Gmail Header Branding (Only Gmail logo in the section) -->
+      <div class="contact-form-branding">
+        <a href="http://www.google.com/gmail" target="_blank" rel="noopener noreferrer" title="Open Google Mail">
+          <img src="assets/images/gmail_official.png" alt="Official Gmail Logo" class="gmail-brand-logo">
+        </a>
+        <div class="gmail-brand-text">
+          <span class="gmail-brand-title">Direct Gmail Dispatch</span>
+          <span class="gmail-brand-sub">Delivers directly to rohanvermahja@gmail.com</span>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-unified-form">
+        <div class="form-row-dual">
+          <div class="form-group-floating">
+            <input type="email" id="contactUserEmail" class="form-input" placeholder=" " required>
+            <label for="contactUserEmail" class="form-label">Your Email Address</label>
+          </div>
+          <div class="form-group-floating">
+            <input type="text" id="contactSubject" class="form-input" placeholder=" " required>
+            <label for="contactSubject" class="form-label">Subject</label>
+          </div>
+        </div>
+
+        <div class="form-group-floating">
+          <textarea id="contactMessage" class="form-input" rows="5" placeholder=" " required style="resize: vertical;"></textarea>
+          <label for="contactMessage" class="form-label">Message Details</label>
+        </div>
+
+        <button type="submit" class="btn-liquid contact-submit-btn" style="width: 100%;" id="contactSubmitBtn">
+          <span>Send Message Directly</span>
+          <svg class="btn-send-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+
+        <p class="contact-direct-hint">
+          Direct Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rohanvermahja@gmail.com" target="_blank" rel="noopener noreferrer">rohanvermahja@gmail.com</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- Direct Email Send Confirmation Modal -->
+    <div class="modal-backdrop" id="mailConfirmModal">
+      <div class="mail-confirm-card">
+        <div class="mail-confirm-header">
+          <img src="assets/images/gmail_official.png" alt="Gmail" class="mail-confirm-logo">
+          <div>
+            <h4 class="mail-confirm-title">Confirm Direct Email Delivery</h4>
+            <span class="mail-confirm-subtitle">Sending directly to Rohan's Inbox</span>
+          </div>
+        </div>
+        <div class="mail-confirm-body">
+          <div class="mail-preview-field">
+            <span class="mail-preview-label">From:</span>
+            <span class="mail-preview-val" id="mailConfirmSender">-</span>
+          </div>
+          <div class="mail-preview-field">
+            <span class="mail-preview-label">To:</span>
+            <span class="mail-preview-val highlight">rohanvermahja@gmail.com</span>
+          </div>
+          <div class="mail-preview-field">
+            <span class="mail-preview-label">Subject:</span>
+            <span class="mail-preview-val" id="mailConfirmSubject">-</span>
+          </div>
+          <p class="mail-confirm-note">Opens official Google Mail directly with your custom subject and message pre-filled, so it delivers straight from your email to Rohan with zero middleman.</p>
+        </div>
+        <div class="mail-confirm-actions">
+          <button type="button" class="btn-glass-outline" id="cancelMailSendBtn">Cancel</button>
+          <button type="button" class="btn-liquid" id="proceedMailSendBtn">
+            <span>Confirm &amp; Send</span>
+            <svg class="btn-send-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct Email Success Toast Popup -->
+    <div class="mail-sent-toast" id="mailSentToast">
+      <img src="assets/images/gmail_official.png" alt="Gmail" class="toast-gmail-icon">
+      <div class="toast-text-wrap">
+        <div class="toast-title">Message Delivered Successfully!</div>
+        <div class="toast-desc">Rohan received your message at rohanvermahja@gmail.com and will reply promptly.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       COMPACT FOOTER (NO COPYRIGHT, PITHY LINE, 3-4 ICONS AT BOTTOM RIGHT)
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-pithy-text">
+        Engineered with love, terminal prompts, chaotic code &amp; darkened under-eye circles from endless screen stare-downs <span class="footer-animated-heart" title="Made with endless love &amp; late-night code">❤</span>
+      </div>
+
+      <!-- Footer Social Icons Grouped at Bottom Right -->
+      <div class="footer-socials-right">
+        <a href="https://github.com/Rohanbhoff" target="_blank" rel="noopener noreferrer" class="social-icon-btn github-btn" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/rohan-verma-982879357/" target="_blank" rel="noopener noreferrer" class="social-icon-btn linkedin-btn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/Rohanbhoffverma/" target="_blank" rel="noopener noreferrer" class="social-icon-btn leetcode-btn" title="LeetCode">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382z"/></svg>
+        </a>
+        <!-- Gmail Direct Web Redirect (No Outlook popups) -->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rohanvermahja@gmail.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn email-btn" title="Open Web Gmail to Rohan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       1. RANDOM-LOCATION POTTED PLANT (NO INITIAL TEXT - COUNTER ON WATER)
+       2. BOTTOM-ONLY SCARED FISH (IDLE BUBBLES & SCATTER FLEE)
+       =================================================================== -->
+  <!-- 1. Random Location Potted Plant -->
+  <div class="random-floating-plant" id="randomPlantWrap" title="Click to water the plant!">
+    <canvas id="randomPlantCanvas" class="random-plant-canvas"></canvas>
+  </div>
+
+  <!-- 2. Bottom Scared Fish with Mouth Bubbles -->
+  <div class="bottom-scared-fish" id="bottomScaredFish" title="A timid little fish! Click it...">
+    <div class="fish-idle-bubbles" id="fishIdleBubbles"></div>
+    <div class="fish-swim-wrapper">
+      <div class="fish-body-art">
+        <div class="fish-eye-sparkle"></div>
+        <div class="fish-tail-fin"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       24/7 LIVE RADIO DOCK (TOP-RIGHT HOVER MINIMIZE & CORNER ZONE REVEAL)
+       =================================================================== -->
+  <div class="lofi-radio-dock" id="lofiRadioDock">
+    <!-- Top-Right Hover Minimize Button -->
+    <button class="tray-minimize-btn" id="lofiMinimizeBtn" title="Minimize Radio">–</button>
+
+    <!-- Prev Station -->
+    <button class="lofi-ctrl-btn" id="lofiPrevBtn" title="Previous Radio Station">⏮</button>
+    
+    <!-- Play / Pause -->
+    <button class="lofi-ctrl-btn play-main" id="lofiPlayBtn" title="Play / Pause Live Radio">
+      <span id="lofiPlayIcon">▶</span>
+    </button>
+    
+    <!-- Next Station -->
+    <button class="lofi-ctrl-btn" id="lofiNextBtn" title="Next Radio Station">⏭</button>
+
+    <!-- Station Info -->
+    <div class="lofi-info" id="lofiStationBadge" title="Current Station">
+      <span class="lofi-station-name" id="lofiStationName">I Love Chillhop</span>
+      <span class="lofi-live-indicator" id="lofiStationGenre">24/7 Live Stream</span>
+    </div>
+
+    <!-- Reactive Visualizer Canvas -->
+    <canvas id="lofiVisualizer" class="lofi-visualizer-canvas" width="50" height="22"></canvas>
+
+    <!-- Volume Controller Slider -->
+    <input type="range" class="lofi-volume-slider" id="lofiVolumeSlider" min="0" max="1" step="0.05" value="0.35" title="Volume Slider">
+
+    <!-- Mute Toggle -->
+    <button class="lofi-ctrl-btn" id="lofiMuteBtn" title="Mute Audio">🔊</button>
+  </div>
+
+  <!-- Bottom-Left Corner Zone for Minimized Radio Reveal on Hover -->
+  <div class="corner-hover-zone corner-zone-left" id="lofiCornerZone" title="Hover to reveal Radio">
+    <button class="lofi-minimized-pill" id="lofiMinimizedPill" title="Restore Live Radio">🎵</button>
+  </div>
+
+  <!-- ===================================================================
+       ARCADE BUTTON (TOP-RIGHT HOVER MINIMIZE & CORNER ZONE REVEAL)
+       =================================================================== -->
+  <div class="arcade-dock-container" id="arcadeDockContainer">
+    <button class="arcade-dock-btn" id="arcadeLauncherBtn">
+      <span>👾</span>
+      <span>Arcade Mode</span>
+      <span class="arcade-minimize-btn" id="arcadeMinimizeBtn" title="Minimize Arcade">–</span>
+    </button>
+  </div>
+
+  <!-- Bottom-Right Corner Zone for Minimized Arcade Reveal on Hover -->
+  <div class="corner-hover-zone corner-zone-right" id="arcadeCornerZone" title="Hover to reveal Arcade">
+    <button class="arcade-minimized-pill" id="arcadeMinimizedPill" title="Restore Arcade Mode">👾</button>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 1: HIGH-RES CERTIFICATE VIEWER
+       =================================================================== -->
+  <div class="modal-backdrop" id="certModal">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="closeCertModalBtn">&times;</button>
+      <div class="cert-modal-body">
+        <div class="cert-modal-img-container">
+          <img src="" alt="Full Resolution Certificate" id="modalCertImg">
+        </div>
+        <div>
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-pink); font-weight: 700;" id="modalCertOrg">Issuing Authority</span>
+          <h2 style="font-size: 1.45rem; font-weight: 800; margin: 0.35rem 0;" id="modalCertTitle">Certificate Title</h2>
+          <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
+            <span>Date: <b id="modalCertDate">-</b></span>
+            <span>Credential ID: <code style="color: var(--accent-blue);" id="modalCertId">-</code></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 2: CLASSIC RETRO PC ARCADE WINDOW (NO TETRIS - ENDLESS MODES)
+       =================================================================== -->
+  <div class="modal-backdrop" id="arcadeModal">
+    <div class="retro-pc-window">
+      
+      <!-- Classic Retro PC Titlebar -->
+      <div class="retro-window-titlebar">
+        <div class="retro-titlebar-left">
+          <span class="retro-app-icon">🕹️</span>
+          <span class="retro-title-text">C:\ARCADE\VINTAGE_CABIN.EXE</span>
+        </div>
+        <div class="retro-titlebar-buttons">
+          <button class="retro-title-btn" id="arcadeSfxToggleBtn" title="Toggle 8-Bit Chiptunes">🔊</button>
+          <button class="retro-title-btn close-x" id="closeArcadeBtn" title="Close">✕</button>
+        </div>
+      </div>
+
+      <!-- Retro PC Menu & Score Bar -->
+      <div class="retro-menubar">
+        <div class="arcade-tabs-strip">
+          <button class="arcade-tab-btn active" data-game="flappy">🐤 Flappy Axolotl</button>
+          <button class="arcade-tab-btn" data-game="galaga">🚀 Galaga Defender</button>
+        </div>
+        <div class="retro-score-panel">
+          SCORE: <span id="arcadeScore">0</span> | BEST: <span id="arcadeHighScore">0</span>
+        </div>
+      </div>
+
+      <!-- Authentic Retro CRT Display -->
+      <div class="arcade-screen-crt">
+        <canvas id="arcadeCanvas"></canvas>
+        <div id="arcadeStartOverlay" class="arcade-start-overlay">
+          <!-- Retro Insert Coin Slot Visual -->
+          <div class="retro-coin-slot-wrap" id="coinSlotWrap">
+            <div class="retro-coin-slot">
+              <div class="slot-cut"></div>
+            </div>
+            <div class="retro-falling-coin" id="retroCoin">🪙</div>
+          </div>
+          <h3 id="arcadeOverlayTitle" class="arcade-overlay-title">🐤 FLAPPY AXOLOTL</h3>
+          <p id="arcadeOverlaySubtitle" class="arcade-overlay-desc">
+            Press [SPACE] or Click / Tap to jump and avoid incoming firewalls!
+          </p>
+          <button class="retro-play-btn" id="arcadeStartActionBtn">
+            <span>[ INSERT COIN &amp; PLAY ]</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="retro-statusbar">
+        <span>STATUS: READY</span>
+        <span>ENGINE: 8-BIT SYNTH ACTIVE</span>
+        <span>CONTROLS: [SPACE / CLICK]</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       UNIVERSAL HIGH-RES IMAGE LIGHTBOX & FULLSCREEN ZOOM MODAL
+       =================================================================== -->
+  <div class="image-lightbox-modal" id="imageLightboxModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-container" id="lightboxContainer">
+      <!-- Toolbar -->
+      <div class="lightbox-toolbar">
+        <div class="lightbox-info">
+          <span class="lightbox-title" id="lightboxTitle">Image Inspection</span>
+          <span class="lightbox-counter" id="lightboxZoomLevel">100%</span>
+        </div>
+        <div class="lightbox-actions">
+          <button class="lightbox-tool-btn" id="lightboxZoomOutBtn" title="Zoom Out (Scroll Down)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          </button>
+          <button class="lightbox-tool-btn" id="lightboxZoomInBtn" title="Zoom In (Scroll Up)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          </button>
+          <button class="lightbox-tool-btn" id="lightboxResetBtn" title="Reset Zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          </button>
+          <button class="lightbox-tool-btn" id="lightboxFullscreenBtn" title="Toggle Fullscreen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" id="lightboxFullscreenIcon"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+          </button>
+          <button class="lightbox-tool-btn close-btn" id="lightboxCloseBtn" title="Close Preview (Esc)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Viewport -->
+      <div class="lightbox-viewport" id="lightboxViewport">
+        <div class="lightbox-img-wrapper" id="lightboxImgWrapper">
+          <img src="" alt="Fullscreen preview" class="lightbox-img" id="lightboxImg">
+        </div>
+      </div>
+      <!-- Controls Hint -->
+      <div class="lightbox-instructions">
+        <span>🖱️ Scroll Wheel: Zoom In / Out</span> • <span>🖐️ Drag to Pan</span> • <span>Double Click: 2x Zoom</span> • <span>[ESC] Close</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/eye-tracker.js"></script>
+  <script src="js/lofi-radio.js"></script>
+  <script src="js/toys.js"></script>
+  <script src="js/arcade.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

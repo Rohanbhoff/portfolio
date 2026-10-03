@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 70" fill="none">
+  <!-- TPCODL (Tata Power Central Odisha Distribution Limited) Official Brand Mark -->
+  <g id="tata-symbol">
+    <circle cx="35" cy="35" r="30" fill="url(#tataGrad)" />
+    <!-- TATA 'T' Logomark -->
+    <path d="M21 22 H49 V28 H38 V48 H32 V28 H21 Z" fill="#ffffff" />
+    <path d="M24 50 H46 V53 H24 Z" fill="#ffffff" opacity="0.8" />
+  </g>
+  <g id="tp-text" font-family="'Outfit', 'Segoe UI', sans-serif">
+    <text x="76" y="32" font-size="20" font-weight="900" fill="#00d2ff" letter-spacing="1.5">TPCODL</text>
+    <text x="76" y="48" font-size="10.5" font-weight="600" fill="#94a3b8" letter-spacing="0.5">TATA POWER ODISHA</text>
+  </g>
+  <defs>
+    <linearGradient id="tataGrad" x1="5" y1="5" x2="65" y2="65" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0284c7" />
+      <stop offset="1" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+</svg>

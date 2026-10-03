@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Google Antigravity Emblem -->
+  <defs>
+    <linearGradient id="gOrbit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4285F4"/>
+      <stop offset="35%" stop-color="#EA4335"/>
+      <stop offset="70%" stop-color="#FBBC05"/>
+      <stop offset="100%" stop-color="#34A853"/>
+    </linearGradient>
+  </defs>
+  <!-- Orbiting Gravity Field -->
+  <ellipse cx="24" cy="24" rx="21" ry="8" fill="none" stroke="url(#gOrbit)" stroke-width="2.5" transform="rotate(-28 24 24)" stroke-dasharray="3 2"/>
+  <!-- Google 4-Color Core Sphere / G -->
+  <path fill="#4285F4" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.5l6.8-6.8C35.8 2.4 30.2 0 24 0 14.6 0 6.8 5.4 3 13.3l7.9 6.1C12.8 13.6 18 9.5 24 9.5z"/>
+  <path fill="#34A853" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.5c-.5 2.8-2.1 5.2-4.5 6.8l7.2 5.6c4.2-3.9 6.9-9.6 6.9-16.9z"/>
+  <path fill="#FBBC05" d="M10.9 28.6c-.6-1.8-1-3.7-1-5.6s.4-3.8 1-5.6l-7.9-6.1C1.1 15.2 0 19.5 0 24s1.1 8.8 3 12.7l7.9-6.1z"/>
+  <path fill="#EA4335" d="M24 48c6.5 0 12-2.1 16-5.8l-7.2-5.6c-2.2 1.5-5 2.4-8.8 2.4-6 0-11.2-4.1-13.1-9.9L3 35.2C6.8 43.1 14.6 48 24 48z"/>
+  <!-- Antigravity Sparkle Floating Dot -->
+  <circle cx="39" cy="15" r="3" fill="#00d2ff"/>
+</svg>

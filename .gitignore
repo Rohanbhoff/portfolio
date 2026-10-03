@@ -1,0 +1,14 @@
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python cache & scratch
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+find_*.py
+inspect_*.py
+test_*.py
