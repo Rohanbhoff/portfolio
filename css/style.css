@@ -643,12 +643,16 @@ body {
   font-weight: 800;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .brand-axolotl-wrap span {
   display: inline-block;
   animation: brandTextGlow 6s ease-in-out infinite alternate;
   will-change: filter;
+  cursor: pointer;
+  padding: 6px 4px;
 }
 
 @keyframes brandTextGlow {

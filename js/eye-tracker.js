@@ -59,8 +59,34 @@ class AxolotlMascotTracker {
 
       const brandWrap = this.mascot.closest('.brand-axolotl-wrap');
       if (brandWrap) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        // Instant zero-delay touch tap on mobile
+        brandWrap.addEventListener('touchstart', (e) => {
+          if (!e.target.closest('#axolotlMascot') && e.touches.length > 0) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+          }
+        }, { passive: true });
+
+        brandWrap.addEventListener('touchend', (e) => {
+          if (e.target.closest('#axolotlMascot')) return;
+          if (e.changedTouches.length > 0) {
+            const dist = Math.hypot(
+              e.changedTouches[0].clientX - touchStartX,
+              e.changedTouches[0].clientY - touchStartY
+            );
+            // Under 12px drag indicates an intentional tap (not a swipe scroll)
+            if (dist < 12) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }
+        });
+
+        // Standard click for desktop PC and fallback
         brandWrap.addEventListener('click', (e) => {
-          // If clicking on "Rohan Verma" text or outside the mascot, redirect/scroll smoothly to top of website
           if (!e.target.closest('#axolotlMascot')) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
