@@ -622,29 +622,19 @@ body {
    Soft pink chubby head, 3 distinct petal gills per side,
    big shiny dark eyes, rosy blush circles & lying-down '3' cat smile (ε)
    =================================================================== */
-.brand-axolotl-wrap,
-.brand-axolotl-wrap *,
-.axolotl-chubby-mascot,
-.axolotl-chubby-mascot * {
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-  -webkit-touch-callout: none !important;
-  -webkit-tap-highlight-color: transparent !important;
-}
-
 .brand-axolotl-wrap {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.35rem; /* Generous spacing between axolotl mascot and name */
   text-decoration: none;
   color: var(--text-primary);
   font-weight: 800;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .brand-axolotl-wrap span {
@@ -652,7 +642,6 @@ body {
   animation: brandTextGlow 6s ease-in-out infinite alternate;
   will-change: filter;
   cursor: pointer;
-  padding: 6px 4px;
 }
 
 @keyframes brandTextGlow {
@@ -676,6 +665,9 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .axolotl-chubby-mascot:hover {
