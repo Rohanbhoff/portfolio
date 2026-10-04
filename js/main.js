@@ -79,6 +79,15 @@ function initCustomCursor() {
   const spotlight = document.getElementById('cursorSpotlight');
   if (!dot || !ring) return;
 
+  // On touch devices / mobile phones, do NOT run custom mouse tracking or lerp RAF loop
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches || ('ontouchstart' in window);
+  if (isTouchDevice) {
+    dot.style.display = 'none';
+    ring.style.display = 'none';
+    if (spotlight) spotlight.style.display = 'none';
+    return;
+  }
+
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
   let ringX = mouseX;
@@ -118,9 +127,13 @@ function initCustomCursor() {
 
 // POINTER CLICK ANIMATION (COLOR SPLASH RIPPLE & BURSTING TWINKLE SPARKLES)
 function initPointerClickEffects() {
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches || ('ontouchstart' in window);
+
   window.addEventListener('click', (e) => {
     // Skip if clicking inside arcade game canvas to avoid overlaying game
     if (e.target && e.target.id === 'arcadeCanvas') return;
+    // On touch mobile, skip spawning DOM sparkles to preserve 60fps touch scrolling
+    if (isTouchDevice) return;
 
     const x = e.clientX;
     const y = e.clientY;
@@ -363,6 +376,91 @@ function initUniversalImageLightbox() {
     } else {
       setZoom(2.0);
     }
+  });
+
+  // Touch Gestures: Smooth Hardware-Accelerated Pinch-to-Zoom & Pan on Mobile
+  let initialPinchDist = 0;
+  let initialScale = 1.0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isTouching = false;
+  let lastTapTime = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      // Double tap detector to toggle 2.2x zoom
+      const now = Date.now();
+      if (now - lastTapTime < 320) {
+        e.preventDefault();
+        imgWrapper.classList.remove('is-touching');
+        if (scale > 1.05) {
+          resetZoom();
+        } else {
+          setZoom(2.2);
+        }
+        lastTapTime = 0;
+        return;
+      }
+      lastTapTime = now;
+
+      if (scale > 1.0) {
+        isTouching = true;
+        touchStartX = e.touches[0].clientX - panX;
+        touchStartY = e.touches[0].clientY - panY;
+        imgWrapper.classList.add('is-touching');
+      }
+    } else if (e.touches.length === 2) {
+      e.preventDefault();
+      isTouching = true;
+      initialPinchDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      initialScale = scale;
+      imgWrapper.classList.add('is-touching');
+    }
+  }, { passive: false });
+
+  viewport.addEventListener('touchmove', (e) => {
+    if (!isTouching) return;
+
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const currentDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      if (initialPinchDist > 0) {
+        const factor = currentDist / initialPinchDist;
+        const newScale = Math.min(Math.max(0.8, initialScale * factor), 4.5);
+        scale = newScale;
+        updateTransform();
+      }
+    } else if (e.touches.length === 1 && scale > 1.0) {
+      e.preventDefault();
+      panX = e.touches[0].clientX - touchStartX;
+      panY = e.touches[0].clientY - touchStartY;
+      updateTransform();
+    }
+  }, { passive: false });
+
+  viewport.addEventListener('touchend', (e) => {
+    if (e.touches.length === 0) {
+      isTouching = false;
+      imgWrapper.classList.remove('is-touching');
+      if (scale < 1.0) {
+        resetZoom();
+      }
+    } else if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX - panX;
+      touchStartY = e.touches[0].clientY - panY;
+      initialPinchDist = 0;
+    }
+  });
+
+  viewport.addEventListener('touchcancel', () => {
+    isTouching = false;
+    imgWrapper.classList.remove('is-touching');
   });
 
   // Toolbar Actions

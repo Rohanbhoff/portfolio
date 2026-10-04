@@ -55,6 +55,16 @@ class AxolotlMascotTracker {
         }
         this.triggerHappyBlush();
       });
+
+      this.mascot.addEventListener('contextmenu', (e) => e.preventDefault());
+
+      const brandWrap = this.mascot.closest('.brand-axolotl-wrap');
+      if (brandWrap) {
+        brandWrap.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+        brandWrap.addEventListener('contextmenu', (e) => e.preventDefault());
+      }
     }
 
     // Interactive element hover: gentle excitement
