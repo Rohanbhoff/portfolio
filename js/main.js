@@ -79,15 +79,6 @@ function initCustomCursor() {
   const spotlight = document.getElementById('cursorSpotlight');
   if (!dot || !ring) return;
 
-  // On touch devices / mobile phones, do NOT run custom mouse tracking or lerp RAF loop
-  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches || ('ontouchstart' in window);
-  if (isTouchDevice) {
-    dot.style.display = 'none';
-    ring.style.display = 'none';
-    if (spotlight) spotlight.style.display = 'none';
-    return;
-  }
-
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
   let ringX = mouseX;
@@ -98,14 +89,30 @@ function initCustomCursor() {
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
   });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      mouseX = e.touches[0].clientX;
+      mouseY = e.touches[0].clientY;
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 0) {
+      mouseX = e.touches[0].clientX;
+      mouseY = e.touches[0].clientY;
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    }
+  }, { passive: true });
 
   function renderCursorAndSpotlight() {
     // Smooth lerp for ring and ambient color spotlight
     ringX += (mouseX - ringX) * 0.2;
     ringY += (mouseY - ringY) * 0.2;
-    ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
 
     if (spotlight) {
       spotX += (mouseX - spotX) * 0.08;
@@ -127,13 +134,9 @@ function initCustomCursor() {
 
 // POINTER CLICK ANIMATION (COLOR SPLASH RIPPLE & BURSTING TWINKLE SPARKLES)
 function initPointerClickEffects() {
-  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches || ('ontouchstart' in window);
-
   window.addEventListener('click', (e) => {
     // Skip if clicking inside arcade game canvas to avoid overlaying game
     if (e.target && e.target.id === 'arcadeCanvas') return;
-    // On touch mobile, skip spawning DOM sparkles to preserve 60fps touch scrolling
-    if (isTouchDevice) return;
 
     const x = e.clientX;
     const y = e.clientY;

@@ -12,7 +12,6 @@ class AxolotlMascotTracker {
     this.mascot = document.getElementById('axolotlMascot');
     this.pupils = document.querySelectorAll('.axolotl-pupil-shiny');
     this.sockets = document.querySelectorAll('.axolotl-eye-socket');
-    this.zzzContainer = document.getElementById('axolotlSleepZzz');
 
     this.mouseX = window.innerWidth / 2;
     this.mouseY = window.innerHeight / 2;
@@ -61,9 +60,12 @@ class AxolotlMascotTracker {
       const brandWrap = this.mascot.closest('.brand-axolotl-wrap');
       if (brandWrap) {
         brandWrap.addEventListener('click', (e) => {
-          e.preventDefault();
+          // If clicking on "Rohan Verma" text or outside the mascot, redirect/scroll smoothly to top of website
+          if (!e.target.closest('#axolotlMascot')) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         });
-        brandWrap.addEventListener('contextmenu', (e) => e.preventDefault());
       }
     }
 
@@ -155,22 +157,13 @@ class AxolotlMascotTracker {
     this.isYawning = true;
     this.mascot.classList.add('yawning');
 
-    // After yawn completes (1.8s), enter peaceful sleep with zzz bubbles
+    // After yawn completes (1.8s), enter peaceful sleep
     setTimeout(() => {
       if (!this.isYawning) return; // Woken up early
       this.isYawning = false;
       this.mascot.classList.remove('yawning');
       this.mascot.classList.add('sleeping');
       this.isSleeping = true;
-
-      // Spawn floating animated zzz's
-      if (this.zzzContainer) {
-        this.zzzContainer.innerHTML = `
-          <span class="zzz-bubble zzz-bubble-1">z</span>
-          <span class="zzz-bubble zzz-bubble-2">z</span>
-          <span class="zzz-bubble zzz-bubble-3">Z</span>
-        `;
-      }
     }, 1800);
   }
 
@@ -179,9 +172,6 @@ class AxolotlMascotTracker {
     this.isSleeping = false;
     if (this.mascot) {
       this.mascot.classList.remove('yawning', 'sleeping');
-    }
-    if (this.zzzContainer) {
-      this.zzzContainer.innerHTML = '';
     }
     this.resetIdleTimer();
   }
