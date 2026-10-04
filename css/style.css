@@ -898,62 +898,64 @@ body {
 }
 
 /* Floating Sleep Zzz Bubbles (Originating right from Nose/Mouth area like 😴 emoji) */
+/* Floating Sleep Zzz Bubbles (Originating right from Nose/Mouth area like 😴 emoji) */
 .axolotl-sleep-zzz {
   position: absolute;
-  bottom: 8px;
-  left: 54%;
-  width: 44px;
-  height: 48px;
+  top: -8px;
+  right: -20px;
+  width: 48px;
+  height: 52px;
   pointer-events: none;
-  z-index: 15;
+  z-index: 999;
 }
 
 .zzz-bubble {
   position: absolute;
-  font-family: var(--font-heading), monospace;
+  font-family: 'Outfit', var(--font-heading), sans-serif;
   font-weight: 900;
-  color: #ff5c8a;
-  text-shadow: 0 0 6px rgba(255, 42, 133, 0.8), 0 0 12px rgba(157, 78, 221, 0.5);
+  color: #ff2a85;
+  text-shadow: 0 0 6px #ff2a85, 0 0 14px #9d4edd, 0 0 20px #00d2ff;
   opacity: 0;
-  animation: zzzFloatFromMouth 3.2s ease-in-out infinite;
+  animation: zzzFloatFromMouth 2.6s cubic-bezier(0.2, 0.8, 0.4, 1) infinite both;
+  user-select: none;
 }
 
 .zzz-bubble-1 {
-  font-size: 8px;
-  bottom: 2px;
-  left: 0px;
+  font-size: 11px;
+  bottom: 6px;
+  left: 2px;
   animation-delay: 0s;
 }
 
 .zzz-bubble-2 {
-  font-size: 10.5px;
-  bottom: 2px;
-  left: 2px;
-  animation-delay: 1.05s;
+  font-size: 14px;
+  bottom: 8px;
+  left: 8px;
+  animation-delay: 0.85s;
 }
 
 .zzz-bubble-3 {
-  font-size: 13.5px;
-  bottom: 2px;
-  left: 4px;
-  animation-delay: 2.1s;
+  font-size: 17px;
+  bottom: 10px;
+  left: 14px;
+  animation-delay: 1.7s;
 }
 
 @keyframes zzzFloatFromMouth {
   0% {
-    transform: translate(0, 0) scale(0.5);
+    transform: translate(0, 0) scale(0.6);
     opacity: 0;
   }
-  25% {
-    opacity: 0.95;
-    transform: translate(6px, -10px) scale(0.85);
+  20% {
+    opacity: 1;
+    transform: translate(4px, -8px) scale(0.9);
   }
   65% {
-    opacity: 0.85;
-    transform: translate(14px, -24px) scale(1.1);
+    opacity: 0.95;
+    transform: translate(12px, -20px) scale(1.15);
   }
   100% {
-    transform: translate(22px, -38px) scale(1.3);
+    transform: translate(20px, -34px) scale(1.35);
     opacity: 0;
   }
 }

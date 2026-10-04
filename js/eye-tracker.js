@@ -22,7 +22,8 @@ class AxolotlMascotTracker {
     this.isYawning = false;
     this.isSleeping = false;
     this.idleTimer = null;
-    this.idleDelay = 9500; // 9.5s of inactivity triggers yawn -> sleep
+    this.idleDelay = 4800; // 4.8s of inactivity triggers yawn -> sleep
+    window.mascotTracker = this;
 
     this.init();
   }
@@ -104,7 +105,18 @@ class AxolotlMascotTracker {
   }
 
   initIdleDetection() {
-    const handleUserActivity = () => {
+    let lastX = this.mouseX;
+    let lastY = this.mouseY;
+
+    const handleUserActivity = (e) => {
+      // Ignore sub-pixel optical mouse/trackpad palm drift (< 7px movement)
+      if (e && e.type === 'mousemove') {
+        const dist = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+        if (dist < 7) return;
+        lastX = e.clientX;
+        lastY = e.clientY;
+      }
+
       if (this.isSleeping || this.isYawning) {
         this.wakeUp();
       }
@@ -133,10 +145,7 @@ class AxolotlMascotTracker {
     this.isYawning = true;
     this.mascot.classList.add('yawning');
 
-    // Silent cute yawn motion without noisy audio
-    // (After yawn completes in 2.2s, enters peaceful sleep with zzz bubbles)
-
-    // After yawn completes (2.2s), enter peaceful sleep
+    // After yawn completes (1.8s), enter peaceful sleep with zzz bubbles
     setTimeout(() => {
       if (!this.isYawning) return; // Woken up early
       this.isYawning = false;
@@ -152,7 +161,7 @@ class AxolotlMascotTracker {
           <span class="zzz-bubble zzz-bubble-3">Z</span>
         `;
       }
-    }, 2200);
+    }, 1800);
   }
 
   wakeUp() {
