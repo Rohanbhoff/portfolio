@@ -122,13 +122,13 @@ class LiveInternetRadio {
 
     this.audio.addEventListener('playing', () => {
       this.isPlaying = true;
-      if (this.playIcon) this.playIcon.textContent = '⏸';
+      if (this.playIcon) this.playIcon.textContent = '⏸\uFE0E';
       this.startVisualizer();
     });
 
     this.audio.addEventListener('pause', () => {
       this.isPlaying = false;
-      if (this.playIcon) this.playIcon.textContent = '▶';
+      if (this.playIcon) this.playIcon.textContent = '▶\uFE0E';
       if (this.animId) {
         cancelAnimationFrame(this.animId);
         this.animId = null;
@@ -155,7 +155,7 @@ class LiveInternetRadio {
     this.audio.play()
       .then(() => {
         this.isPlaying = true;
-        if (this.playIcon) this.playIcon.textContent = '⏸';
+        if (this.playIcon) this.playIcon.textContent = '⏸\uFE0E';
         this.startVisualizer();
       })
       .catch((err) => {
@@ -167,7 +167,7 @@ class LiveInternetRadio {
   pause() {
     this.audio.pause();
     this.isPlaying = false;
-    if (this.playIcon) this.playIcon.textContent = '▶';
+    if (this.playIcon) this.playIcon.textContent = '▶\uFE0E';
     if (this.animId) {
       cancelAnimationFrame(this.animId);
       this.animId = null;
